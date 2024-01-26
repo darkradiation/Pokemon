@@ -29,24 +29,24 @@ function SocialMediaButtonsContainer() {
         LinkedIn
       </SocialMediaButton>
 
-      <SocialMediaButton
+      {/* <SocialMediaButton
         address="https://example.com/youtube"
         icon="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Youtube3_svg-128.png"
       >
         YouTube
-      </SocialMediaButton>
+      </SocialMediaButton> */}
       <SocialMediaButton
         address="https://example.com/facebook"
         icon="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Facebook_svg-128.png"
       >
         Facebook
       </SocialMediaButton>
-      <SocialMediaButton
+      {/* <SocialMediaButton
         address="https://example.com/reddit"
         icon="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Reddit2_svg-128.png"
       >
         Reddit
-      </SocialMediaButton>
+      </SocialMediaButton> */}
       <SocialMediaButton
         address="https://example.com/whatsapp"
         icon="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Whatsapp_svg-128.png"
