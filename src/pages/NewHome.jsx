@@ -15,15 +15,7 @@ const Main = () => {
   const [selectedType, setSelectedType] = useState("");
   const [POTD, setPOTD] = useState(true);
   const [error, setError] = useState(null);
-
-  const fetchPokemonData = async () => {
-    setLoading(true);
-    const res = await axios.get(url);
-    setNextUrl(res.data.next);
-    setPrevUrl(res.data.previous);
-    await getPokemon(res.data.results);
-    setLoading(false);
-  };
+  const typeURL = "https://pokeapi.co/api/v2/type/";
 
   const getRandomPokemonOfTheDay = async () => {
     const randomPokemonId = Math.floor(Math.random() * 898) + 1;
@@ -33,22 +25,24 @@ const Main = () => {
     setPokeDex(randomPokemonData.data);
   };
 
+  const fetchPokemonData = async () => {
+    setLoading(true);
+    const res = await axios.get(url);
+    setNextUrl(res.data.next);
+    setPrevUrl(res.data.previous);
+    await getPokemon(res.data.results);
+    setLoading(false);
+  };
   const getPokemon = async (res) => {
     const promises = res.map((item) => axios.get(item.url));
     const results = await Promise.all(promises);
     const pokemonData = results.map((result) => result.data);
-
-    if (selectedType) {
-      pokemonData = pokemonData.filter((pokemon) =>
-        pokemon.types.some((type) => type.type.name === selectedType)
-      );
-    }
-
-    setPokeData((state) => {
-      state = [...state, ...pokemonData];
-      state.sort((a, b) => (a.id > b.id ? 1 : -1));
-      return state;
-    });
+    // setPokeData((state) => {
+    //   state = [...state, ...pokemonData];
+    //   state.sort((a, b) => (a.id > b.id ? 1 : -1));
+    //   return state;
+    // });
+    setPokeData(pokemonData);
     getRandomPokemonOfTheDay();
   };
 
@@ -56,8 +50,32 @@ const Main = () => {
     setPOTD(false);
   };
 
+  const fetchPokemonDataByType = async () => {
+    setLoading(true);
+    const d = await axios.get(typeURL + selectedType);
+    await getPokemonByType(d.data.pokemon);
+    setLoading(false);
+  };
+
+  const getPokemonByType = async (res) => {
+    const promises = res.map((item) => axios.get(item.pokemon.url));
+    const results = await Promise.all(promises);
+    const pokemonData = results.map((result) => result.data);
+
+    // Replace the existing state with the new data
+    setPokeData(pokemonData);
+  };
+
   useEffect(() => {
-    fetchPokemonData();
+    if (selectedType === "" || selectedType === null) {
+      console.log("fetching pokemons");
+      fetchPokemonData();
+      console.log(pokeDex);
+    } else {
+      console.log("fetching pokemons by type");
+      fetchPokemonDataByType();
+      console.log(pokeDex);
+    }
   }, [url, selectedType]);
 
   return (

@@ -14,8 +14,27 @@ const Pokeinfo = ({ data }) => {
       ) : (
         <div className="pokeinfo">
           <h1>{data.name}</h1>
-          <img src={baseURL2 + data.id + extension2} alt="" />
+          {/* <img src={baseURL2 + data.id + extension2} alt="" /> */}
+          {data.sprites.other.dream_world.front_default ? (
+            <img src={data.sprites.other.dream_world.front_default} alt="" />
+          ) : (
+            <img src={data.sprites.other.home.front_default} alt="" />
+          )}
+          {/* <img src={baseURL1 + data.id + extension1} alt="" /> */}
+          {/* <img src={data.sprites.front_default} alt="" /> */}
+
+          {/* <img src={data.sprites.front_shiny} alt="" /> */}
           <div className="abilities">
+            <h3>Types</h3>
+            <ul>
+              {data.types.map((poke) => {
+                return (
+                  <>
+                    <li>{poke.type.name}</li>
+                  </>
+                );
+              })}
+            </ul>
             <h3>Abilities</h3>
             <ul>
               {data.abilities.map((poke) => {
@@ -46,4 +65,5 @@ const Pokeinfo = ({ data }) => {
     </>
   );
 };
+
 export default Pokeinfo;
