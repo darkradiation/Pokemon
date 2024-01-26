@@ -1,8 +1,8 @@
 TODO-
 
-- make the search page work with the API search like pokemon type
+- adding more info to the pokeinfo card
 - animate the nav buttons on hover
 
 BUGS -
 
-- the filtering according to pokemon type is not working
+- the social media icon is not showing hover animation on large screens
