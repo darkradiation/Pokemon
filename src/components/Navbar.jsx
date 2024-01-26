@@ -1,20 +1,23 @@
 import React from "react";
 import Navbar_button from "./Navbar_button";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
     <div className="navbar">
       <div className="logo-container">
-        <img
-          src="https://imgs.search.brave.com/6HYMOWEagGiP9RTMs65QrATYoYdW6gfSZjnfOP_qudc/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5nbWFydC5jb20v/ZmlsZXMvMi9Qb2tl/YmFsbC1QTkctRnJl/ZS1Eb3dubG9hZC5w/bmc"
-          alt=""
-        />
+        <Link to="/">
+          <img
+            src="https://imgs.search.brave.com/6HYMOWEagGiP9RTMs65QrATYoYdW6gfSZjnfOP_qudc/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5nbWFydC5jb20v/ZmlsZXMvMi9Qb2tl/YmFsbC1QTkctRnJl/ZS1Eb3dubG9hZC5w/bmc"
+            alt=""
+          />
+        </Link>
         <div className="logo">{"<PokeWorld />"}</div>
       </div>
       <div className="Navbar-buttons">
         <Navbar_button
           link="/"
-          add="https://imgs.search.brave.com/hFJc3HL6bnsSNwqxE9PPIm0304uD-mQ8vTnnt-jrc0E/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9kM3N4/c2htbmNzMTB0ZS5j/bG91ZGZyb250Lm5l/dC9pY29uL3ByZW1p/dW0vcG5nLTEyOC8x/NzEyNjk0LnBuZz90/b2tlbj1leUpoYkdj/aU9pSm9jekkxTmlJ/c0ltdHBaQ0k2SW1S/bFptRjFiSFFpZlFf/Xy5leUpwYzNNaU9p/SmtNM040YzJodGJt/TnpNVEIwWlM1amJH/OTFaR1p5YjI1MExt/NWxkQ0lzSW1WNGND/STZNVGN3TmpJd056/azBOU3dpY1NJNmJu/VnNiQ3dpYVdGMElq/b3hOekExT1RRNE56/UTFmUV9fLjc0ZTU1/Mjk4MjYyNDYyNjU1/N2U1ZGFjNGUzNTYw/MTc3YzI2Mjg0ZmFk/ZTU3NDBmMzc2Y2U0/MWZiMGRiOTdlZDE"
+          add="https://imgs.search.brave.com/mSh6K-OCYcZAPxd_cUvJzEjveS0RYO7CpKayxtI-lVU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pY29u/cy52ZXJ5aWNvbi5j/b20vcG5nLzEyOC9t/aXNjZWxsYW5lb3Vz/L2VmZmV2by9ob3Vz/ZS0zOS5wbmc"
         >
           Home
         </Navbar_button>
