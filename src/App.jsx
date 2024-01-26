@@ -1,7 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
-import Search from "./pages/Search";
 import Navbar from "./components/Navbar";
 import SearchPage from "./pages/SearchPage";
 import NewHome from "./pages/NewHome";
@@ -64,7 +62,6 @@ function App() {
         <Routes>
           <Route path="/" element={<NewHome />} />
           <Route path="aboutUs" element={<AboutUs />} />
-          <Route path="search" element={<Search />} />
           <Route path="searchPage" element={<SearchPage />} />
         </Routes>
       </div>

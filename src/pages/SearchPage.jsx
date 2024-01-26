@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import NewSearchBar from "../components/NewSearchBar";
-import PokemonInfo from "../components/PokemonInfo";
+// import PokemonInfo from "../components/PokemonInfo";
+import Pokeinfo from "../components/Pokemon";
 import ErrorMessage from "../components/ErrorMessage";
 
 const SearchPage = () => {
@@ -1085,7 +1086,7 @@ const SearchPage = () => {
         />
         <div className="info">
           <ErrorMessage error={error} />
-          <PokemonInfo searchedPokemon={searchedPokemon} />
+          <Pokeinfo data={searchedPokemon} />
         </div>
       </div>
     </>
