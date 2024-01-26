@@ -30,7 +30,6 @@ function Navbar() {
         >
           About Us
         </Navbar_button>
-        {/* <Navbar_button link="/newHome">Home</Navbar_button> */}
       </div>
     </div>
   );
